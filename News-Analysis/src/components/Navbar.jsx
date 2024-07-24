@@ -21,7 +21,7 @@ const Navbar = () => {
           <NavLink to="/contact" className="text-white">Contact</NavLink>
         </div>
         <div className="hidden md:flex items-center space-x-4">
-          <a href="/login" className="text-white">Login/Signup</a>
+          <NavLink to="/login" className="text-white">Login/Signup</NavLink>
         </div>
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
