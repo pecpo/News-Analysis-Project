@@ -7,6 +7,7 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
+import NewsPage from "./pages/NewsPage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -14,8 +15,10 @@ const App = () => {
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
         <Route path="*" element={<NotFoundPage/>}/>
+        <Route path="/pages" element={<NewsPage/>}/>
       </Route>
     )
+    
   );
 
   return <RouterProvider router={router} />;
