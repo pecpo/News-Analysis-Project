@@ -12,16 +12,16 @@ const Navbar = () => {
     <nav className="bg-indigo-700 p-4">
       <div className="max-w-full w-full mx-auto flex justify-between items-center px-4">
         <div className="text-white text-2xl font-bold">
-          <NavLink to="#">Brand</NavLink>
+          <NavLink to="/">Brand</NavLink>
         </div>
         <div className="hidden md:flex flex-grow justify-center space-x-4">
-          <NavLink to="#" className="text-white">Home</NavLink>
-          <NavLink to="#" className="text-white">About</NavLink>
-          <NavLink to="#" className="text-white">Services</NavLink>
-          <NavLink to="#" className="text-white">Contact</NavLink>
+          <NavLink to="/" className="text-white">Home</NavLink>
+          <NavLink to="/about" className="text-white">About</NavLink>
+          <NavLink to="/services" className="text-white">Services</NavLink>
+          <NavLink to="/contact" className="text-white">Contact</NavLink>
         </div>
         <div className="hidden md:flex items-center space-x-4">
-          <a href="#" className="text-white">Login/Signup</a>
+          <a href="/login" className="text-white">Login/Signup</a>
         </div>
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
@@ -32,11 +32,11 @@ const Navbar = () => {
         </div>
       </div>
       <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
-        <NavLink to="#" className="block text-white px-2 py-1">Home</NavLink>
-        <NavLink to="#" className="block text-white px-2 py-1">About</NavLink>
-        <NavLink to="#" className="block text-white px-2 py-1">Services</NavLink>
-        <NavLink to="#" className="block text-white px-2 py-1">Contact</NavLink>
-        <NavLink to="#" className="block text-white px-2 py-1">Login/Signup</NavLink>
+        <NavLink to="/" className="block text-white px-2 py-1">Home</NavLink>
+        <NavLink to="/about" className="block text-white px-2 py-1">About</NavLink>
+        <NavLink to="/services" className="block text-white px-2 py-1">Services</NavLink>
+        <NavLink to="/contact" className="block text-white px-2 py-1">Contact</NavLink>
+        <NavLink to="/login" className="block text-white px-2 py-1">Login/Signup</NavLink>
       </div>
     </nav>
   );
