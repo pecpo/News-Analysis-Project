@@ -20,6 +20,9 @@ const Navbar = () => {
           <NavLink to="#" className="text-white">Services</NavLink>
           <NavLink to="#" className="text-white">Contact</NavLink>
         </div>
+        <div className="hidden md:flex items-center space-x-4">
+          <a href="#" className="text-white">Login/Signup</a>
+        </div>
         <div className="md:hidden flex items-center">
           <button onClick={toggleMenu} className="text-white focus:outline-none">
             <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -33,6 +36,7 @@ const Navbar = () => {
         <NavLink to="#" className="block text-white px-2 py-1">About</NavLink>
         <NavLink to="#" className="block text-white px-2 py-1">Services</NavLink>
         <NavLink to="#" className="block text-white px-2 py-1">Contact</NavLink>
+        <NavLink to="#" className="block text-white px-2 py-1">Login/Signup</NavLink>
       </div>
     </nav>
   );
