@@ -21,6 +21,7 @@ const App = () => {
           loader={jobLoader}
         />
         <Route path="*" element={<NotFoundPage />} /> */}
+        <Route path="/pages" element={<NewsPage />} />
       </Route>
     )
   );
