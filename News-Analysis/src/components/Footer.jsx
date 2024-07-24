@@ -9,7 +9,7 @@ const Footer = () => {
           <div className="w-full md:w-auto mb-4 md:mb-0">
             <Link to="/" className="flex flex-shrink-0 items-center mr-4">
               <img src={logo} alt="WhichWing" className="h-10" />
-              <span className="hidden md:block text-white text-2xl font-bold ml-2">WhichWing</span>
+              <span className="hidden md:block text-gray-600 text-2xl font-bold ml-2">WhichWing</span>
             </Link>
           </div>
           <div className="w-full md:flex-1 md:flex justify-center space-x-4 mb-4 md:mb-0">
@@ -26,7 +26,7 @@ const Footer = () => {
           </div>
         </div>
         <div className="mt-8 border-t border-gray-300 pt-8">
-          <div className="flex justify-center space-x-6">
+          <div className="w-full md:flex-1 md:flex justify-center space-x-8 mb-4 md:mb-0">
             <Link to="/" className="text-gray-600 hover:text-gray-800">Terms of Use</Link>
             <Link to="/" className="text-gray-600 hover:text-gray-800">About</Link>
             <Link to="/" className="text-gray-600 hover:text-gray-800">Privacy Policy</Link>
