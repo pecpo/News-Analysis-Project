@@ -8,7 +8,7 @@ const NewsCard = ({
   title,
   description,
   link,
-  linkText,
+  linkText = "Read More",
   bgColor = "bg-black",
   hoverBgColor = "hover:bg-gray-700",
 }) => {
