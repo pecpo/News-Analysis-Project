@@ -10,7 +10,7 @@ const Navbar = () => {
   };
 
   return (
-    <nav className="bg-indigo-700 p-4">
+    <nav className="bg-indigo-700 p-4 fixed top-0 w-full z-50">
       <div className="max-w-full w-full mx-auto flex justify-between items-center px-4">
         <div className="text-white text-2xl font-bold">
         <NavLink className="flex flex-shrink-0 items-center mr-4" to="/">
