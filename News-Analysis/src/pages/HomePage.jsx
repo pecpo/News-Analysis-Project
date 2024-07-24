@@ -6,9 +6,7 @@ const HomePage = () => {
   return (
     <>
       <Hero />
-      <NewsCardsTab title="World" />
-      <NewsCardsTab title="Policy" />
-      <NewsCardsTab title="Business" />
+      <NewsCardsTab heading={"World"} />
     </>
   );
 };

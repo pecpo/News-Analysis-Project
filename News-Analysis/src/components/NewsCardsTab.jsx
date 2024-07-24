@@ -1,13 +1,48 @@
+// NewsCard.js
 import React from "react";
 import NewsCard from "./NewsCard";
+import SampleImage from "../assets/images/sample.jpg";
 
-const NewsCardsTab = ({ title }) => {
+const NewsCardTab = ({ heading }) => {
   return (
-    <>
-      <NewsCard />
-      <NewsCard />
-    </>
+    <section className="py-4">
+      <div className="container-xl lg:container m-auto">
+        <h2 className="text-3xl font-bold mb-4 ml-8 border-b-2 border-gray-300 pb-4">
+          {heading}
+        </h2>
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 p-4 rounded-lg">
+          <NewsCard
+            image={SampleImage}
+            title="For Developers"
+            description="Browse our React jobs and start your career today"
+            link="/jobs"
+            linkText="Browse Jobs"
+          />
+          <NewsCard
+            image={SampleImage}
+            title="For Employers"
+            description="List your job to find the perfect developer for the role"
+            link="/add-job"
+            linkText="Add Job"
+          />
+          <NewsCard
+            image={SampleImage}
+            title="Sample Card"
+            description="This is a sample card description."
+            link="/sample"
+            linkText="Sample Link"
+          />
+          <NewsCard
+            image={SampleImage}
+            title="Another Card"
+            description="Another sample card description."
+            link="/another"
+            linkText="Another Link"
+          />
+        </div>
+      </div>
+    </section>
   );
 };
 
-export default NewsCardsTab;
+export default NewsCardTab;
