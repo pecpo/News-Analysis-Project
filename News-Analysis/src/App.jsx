@@ -14,13 +14,13 @@ const App = () => {
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/jobs" element={<JobsPage />} />
+        {/* <Route path="/jobs" element={<JobsPage />} />
         <Route
           path="/jobs/:id"
           element={<SingleNews title="World" />}
           loader={jobLoader}
         />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFoundPage />} /> */}
       </Route>
     )
   );
