@@ -1,4 +1,3 @@
-import React from "react";
 import {
   Route,
   createBrowserRouter,
@@ -7,7 +6,7 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
-import NewsPage from "./pages/NewsPage";
+import NotFoundPage from "./pages/NotFoundPage";
 
 const App = () => {
   const router = createBrowserRouter(
@@ -21,7 +20,6 @@ const App = () => {
           loader={jobLoader}
         />
         <Route path="*" element={<NotFoundPage />} /> */}
-        <Route path="/pages" element={<NewsPage />} />
       </Route>
     )
   );
