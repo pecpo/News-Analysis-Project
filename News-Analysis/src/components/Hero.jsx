@@ -1,4 +1,5 @@
 import React from "react";
+import SampleImage from "../assets/images/sample.jpg";
 
 const articles = [
   {
@@ -62,7 +63,7 @@ const Hero = () => {
                   className="bg-white rounded-lg shadow-md overflow-hidden"
                 >
                   <img
-                    src={article.imageUrl}
+                    src={SampleImage}
                     alt={article.title}
                     className="w-full h-64 object-cover"
                   />
