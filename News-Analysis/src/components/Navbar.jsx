@@ -35,8 +35,11 @@ const Navbar = () => {
           </NavLink>
         </div>
         <div className="hidden md:flex items-center space-x-4">
-          <NavLink to="/login" className="text-white">
-            Login/Signup
+        <NavLink to="/register" className="text-white">
+            Register
+          </NavLink>
+          <NavLink to="/signin" className="text-white">
+            Sign In
           </NavLink>
         </div>
         <div className="md:hidden flex items-center">
@@ -74,8 +77,11 @@ const Navbar = () => {
         <NavLink to="/technology" className="block text-white px-2 py-1">
           Technology
         </NavLink>
-        <NavLink to="/login" className="block text-white px-2 py-1">
-          Login/Signup
+        <NavLink to="/register" className="block text-white px-2 py-1">
+          Register
+        </NavLink>
+        <NavLink to="/signin" className="block text-white px-2 py-1">
+          Sign In
         </NavLink>
       </div>
     </nav>
