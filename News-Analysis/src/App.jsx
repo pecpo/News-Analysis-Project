@@ -7,7 +7,7 @@ import {
 } from "react-router-dom";
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
-import SingleNews from "./pages/SingleNews";
+import NewsPage from "./pages/NewsPage";
 
 const App = () => {
   const router = createBrowserRouter(
