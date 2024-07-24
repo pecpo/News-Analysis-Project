@@ -16,28 +16,24 @@ const NewsCardTab = ({ heading }) => {
             title="For Developers"
             description="Browse our React jobs and start your career today"
             link="/jobs"
-            linkText="Browse Jobs"
           />
           <NewsCard
             image={SampleImage}
             title="For Employers"
             description="List your job to find the perfect developer for the role"
             link="/add-job"
-            linkText="Add Job"
           />
           <NewsCard
             image={SampleImage}
             title="Sample Card"
             description="This is a sample card description."
             link="/sample"
-            linkText="Sample Link"
           />
           <NewsCard
             image={SampleImage}
             title="Another Card"
             description="Another sample card description."
             link="/another"
-            linkText="Another Link"
           />
         </div>
       </div>
