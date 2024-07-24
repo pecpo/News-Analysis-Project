@@ -1,37 +1,38 @@
+import { useState } from "react";
 import { NavLink } from "react-router-dom";
 
 const Navbar = () => {
-  const linkClass = ({ isActive }) =>
-    isActive
-      ? "bg-black text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2"
-      : "text-white hover:bg-gray-900 hover:text-white rounded-md px-3 py-2";
+  const [isOpen, setIsOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
 
   return (
-    <nav className="bg-indigo-700 border-b border-indigo-500">
-      <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-        <div className="flex h-20 items-center justify-between">
-          <div className="flex flex-1 items-center justify-center md:items-stretch md:justify-start">
-            <NavLink className="flex flex-shrink-0 items-center mr-4" to="/">
-              {/* <img className="h-10 w-auto" src={logo} alt="React Jobs" /> */}
-              <span className="hidden md:block text-white text-2xl font-bold ml-2">
-                React Jobs
-              </span>
-            </NavLink>
-            <div className="md:ml-auto">
-              <div className="flex space-x-2">
-                <NavLink to="/" className={linkClass}>
-                  Home
-                </NavLink>
-                <NavLink to="/jobs" className={linkClass}>
-                  Jobs
-                </NavLink>
-                <NavLink to="/add-job" className={linkClass}>
-                  Add Job
-                </NavLink>
-              </div>
-            </div>
-          </div>
+    <nav className="bg-indigo-700 p-4">
+      <div className="max-w-full w-full mx-auto flex justify-between items-center px-4">
+        <div className="text-white text-2xl font-bold">
+          <NavLink to="#">Brand</NavLink>
         </div>
+        <div className="hidden md:flex flex-grow justify-center space-x-4">
+          <NavLink to="#" className="text-white">Home</NavLink>
+          <NavLink to="#" className="text-white">About</NavLink>
+          <NavLink to="#" className="text-white">Services</NavLink>
+          <NavLink to="#" className="text-white">Contact</NavLink>
+        </div>
+        <div className="md:hidden flex items-center">
+          <button onClick={toggleMenu} className="text-white focus:outline-none">
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+            </svg>
+          </button>
+        </div>
+      </div>
+      <div className={`${isOpen ? 'block' : 'hidden'} md:hidden`}>
+        <NavLink to="#" className="block text-white px-2 py-1">Home</NavLink>
+        <NavLink to="#" className="block text-white px-2 py-1">About</NavLink>
+        <NavLink to="#" className="block text-white px-2 py-1">Services</NavLink>
+        <NavLink to="#" className="block text-white px-2 py-1">Contact</NavLink>
       </div>
     </nav>
   );
