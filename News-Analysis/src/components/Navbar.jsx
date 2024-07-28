@@ -24,14 +24,26 @@ const Navbar = () => {
           <NavLink to="/" className="text-white">
             Home
           </NavLink>
-          <NavLink to="/politics" className="text-white">
-            Politics
+          <NavLink to="/world" className="text-white">
+            World
           </NavLink>
-          <NavLink to="/business" className="text-white">
-            Business
+          <NavLink to="/north-america" className="text-white">
+            North America
           </NavLink>
-          <NavLink to="/technology" className="text-white">
-            Technology
+          <NavLink to="/europe" className="text-white">
+            Europe
+          </NavLink>
+          <NavLink to="/south-america" className="text-white">
+            South America
+          </NavLink>
+          <NavLink to="/asia" className="text-white">
+            Asia
+          </NavLink>
+          <NavLink to="/africa" className="text-white">
+            Africa
+          </NavLink>
+          <NavLink to="/oceania" className="text-white">
+            Oceania
           </NavLink>
         </div>
         <div className="hidden md:flex items-center space-x-4">
@@ -68,14 +80,14 @@ const Navbar = () => {
         <NavLink to="/" className="block text-white px-2 py-1">
           Home
         </NavLink>
-        <NavLink to="/politics" className="block text-white px-2 py-1">
-          Politics
+        <NavLink to="/north-America" className="block text-white px-2 py-1">
+          North-America
         </NavLink>
-        <NavLink to="/business" className="block text-white px-2 py-1">
-          Business
+        <NavLink to="/europe" className="block text-white px-2 py-1">
+          Europe
         </NavLink>
-        <NavLink to="/technology" className="block text-white px-2 py-1">
-          Technology
+        <NavLink to="/south-america" className="block text-white px-2 py-1">
+          South-america
         </NavLink>
         <NavLink to="/register" className="block text-white px-2 py-1">
           Register

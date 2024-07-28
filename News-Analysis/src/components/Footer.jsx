@@ -14,9 +14,13 @@ const Footer = () => {
           </div>
           <div className="w-full md:flex-1 md:flex justify-center space-x-4 mb-4 md:mb-0">
             <Link to="/" className="text-gray-600 hover:text-gray-800">Home</Link>
-            <Link to="/politics" className="text-gray-600 hover:text-gray-800">Politics</Link>
-            <Link to="/business" className="text-gray-600 hover:text-gray-800">Business</Link>
-            <Link to="/technology" className="text-gray-600 hover:text-gray-800">Technology</Link>
+            <Link to="/world" className="text-gray-600 hover:text-gray-800">World</Link>
+            <Link to="/north-america" className="text-gray-600 hover:text-gray-800">North America</Link>
+            <Link to="/europe" className="text-gray-600 hover:text-gray-800">Europe</Link>
+            <Link to="/south-america" className="text-gray-600 hover:text-gray-800">South America</Link>
+            <Link to="/asia" className="text-gray-600 hover:text-gray-800">Asia</Link>
+            <Link to="/africa" className="text-gray-600 hover:text-gray-800">Africa</Link>
+            <Link to="/oceania" className="text-gray-600 hover:text-gray-800">Oceania</Link>
           </div>
           <div className="w-full md:w-auto">
             <div className="flex space-x-4">
