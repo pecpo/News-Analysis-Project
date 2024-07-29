@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Navigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 
 const ArticlePage = () => {
@@ -16,6 +16,9 @@ const ArticlePage = () => {
           throw new Error("Network response was not ok");
         }
         const data = await response.json();
+        if (!data) {
+          throw new Error("Article not found");
+        }
         setArticle(data);
       } catch (error) {
         setError(error);
@@ -33,7 +36,7 @@ const ArticlePage = () => {
         <ClipLoader size={50} />
       </div>
     );
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <Navigate to="/404" />;
 
   return (
     <div className="max-w-5xl mx-auto p-4">
