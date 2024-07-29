@@ -7,14 +7,14 @@ import {
 import MainLayout from "./layouts/MainLayout";
 import HomePage from "./pages/HomePage";
 import NotFoundPage from "./pages/NotFoundPage";
-import NewsPage from "./pages/NewsPage";
+import ArticlePage from "./pages/ArticlePage";
 
 const App = () => {
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path="/" element={<MainLayout />}>
         <Route index element={<HomePage />} />
-        <Route path="/pages" element={<NewsPage />} />
+        <Route path="/article/:id" element={<ArticlePage />} />
         <Route path="*" element={<NotFoundPage />} />
       </Route>
     )
