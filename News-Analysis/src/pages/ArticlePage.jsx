@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
+import NotFoundPage from "./NotFoundPage";
 
 const ArticlePage = () => {
   const { id } = useParams();
@@ -36,7 +37,7 @@ const ArticlePage = () => {
         <ClipLoader size={50} />
       </div>
     );
-  if (error) return <Navigate to="/404" />;
+  if (error) return <NotFoundPage />;
 
   return (
     <div className="max-w-5xl mx-auto p-4">
