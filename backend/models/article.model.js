@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const articleSchema = new mongoose.Schema(
+const ArticleSchema = mongoose.Schema(
   {
     author: {
       type: String,
@@ -29,9 +29,13 @@ const articleSchema = new mongoose.Schema(
     content: {
       type: String,
       required: true
+    },
+    continent: {
+      type: String,
+      required: true
     }
   }
 );
 
-const Article = mongoose.model('Article', articleSchema);
+const Article = mongoose.model('Article', ArticleSchema);
 module.exports = Article;
