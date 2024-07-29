@@ -1,18 +1,16 @@
 {
   "articles": [
     {
-      "id": 1,
       "author": "John Doe",
       "title": "Breaking News: Major Event Unfolds",
       "description": "A major event has just unfolded, causing widespread impact.",
       "url": "https://www.example.com/articles/major-event",
-      "urlToImage": "https://resize.indiatvnews.com/en/centered/newbucket/1200_675/2024/07/breaking-news-template-5-1720141380-1720238248.jpg",
+      "urlToImage": "https://www.example.com/images/major-event.jpg",
       "publishedAt": "2023-07-22T14:00:00Z",
       "content": "In a surprising turn of events, a major incident has occurred that has left everyone in shock. More details to follow.",
       "continent": "North America"
     },
     {
-      "id": 2,
       "author": "Jane Smith",
       "title": "New Technology Innovations in 2024",
       "description": "2024 is set to be a groundbreaking year for technology with several new innovations.",
@@ -23,7 +21,6 @@
       "continent": "Asia"
     },
     {
-      "id": 3,
       "author": "Alice Johnson",
       "title": "Global Economic Outlook for 2024",
       "description": "Experts provide insights into the global economic outlook for the upcoming year.",

@@ -12,7 +12,7 @@ const ArticlePage = () => {
   useEffect(() => {
     const fetchArticle = async () => {
       try {
-        const response = await fetch(`http://localhost:5000/articles/${id}`);
+        const response = await fetch(`/api/articles/${id}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
