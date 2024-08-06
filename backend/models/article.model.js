@@ -33,6 +33,14 @@ const ArticleSchema = mongoose.Schema(
     continent: {
       type: String,
       required: true
+    },
+    politicalLeaning: {
+      type: Number,
+      required: false
+    },
+    sentimentAnalysis: {
+      type: String,
+      required: false
     }
   }
 );
