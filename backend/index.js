@@ -6,16 +6,6 @@ const express = require("express");
 const articleRouter = require("./routes/article.route.js");
 const app = express();
 const port = 5000;
-<<<<<<< HEAD
-// const {
-//   FunctionDeclarationSchemaType,
-//   HarmBlockThreshold,
-//   HarmCategory,
-//   VertexAI
-// } = require('@google-cloud/vertexai');
-// const fs = require('fs');
-// const path = require('path');
-=======
 const {
   FunctionDeclarationSchemaType,
   HarmBlockThreshold,
@@ -25,37 +15,30 @@ const {
 const fs = require('fs');
 const path = require('path');
 const { log } = require("console");
->>>>>>> 932214c48e621a8a33d3ee90308a7f5aac3ebf38
 
 
-// const project = 'notional-impact-429718-c4';
-// const location = 'us-central1';
-// const textModel =  'gemini-1.5-flash-001';
-// const visionModel = 'gemini-1.5-pro-001';
+const project = 'notional-impact-429718-c4';
+const location = 'us-central1';
+const textModel =  'gemini-1.5-flash-001';
+const visionModel = 'gemini-1.5-pro-001';
 
-// const vertexAI = new VertexAI({project: project, location: location});
-// const generativeModel = vertexAI.getGenerativeModel({
-//   model: textModel,
-//   // The following parameters are optional
-//   // They can also be passed to individual content generation requests
-//   safetySettings: [
-//     {category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
-//     {category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
-//     {category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
-//     {category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
-//   ]
-//   // generationConfig: {maxOutputTokens: },
-// });
+const vertexAI = new VertexAI({project: project, location: location});
+const generativeModel = vertexAI.getGenerativeModel({
+  model: textModel,
+  // The following parameters are optional
+  // They can also be passed to individual content generation requests
+  safetySettings: [
+    {category: HarmCategory.HARM_CATEGORY_HATE_SPEECH, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
+    {category: HarmCategory.HARM_CATEGORY_DANGEROUS_CONTENT, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
+    {category: HarmCategory.HARM_CATEGORY_SEXUALLY_EXPLICIT, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
+    {category: HarmCategory.HARM_CATEGORY_HARASSMENT, threshold: HarmBlockThreshold.BLOCK_ONLY_HIGH},
+  ]
+  // generationConfig: {maxOutputTokens: },
+});
 
-<<<<<<< HEAD
-// // Read the prompt from a text file
-// const promptFilePath = '/prompt.txt';
-// const prompt = fs.readFileSync(promptFilePath, 'utf8');
-=======
 // Read the prompt from a text file
 const promptFilePath = path.join(__dirname, 'prompt.txt');
 const prompt = fs.readFileSync(promptFilePath, 'utf8');
->>>>>>> 932214c48e621a8a33d3ee90308a7f5aac3ebf38
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
