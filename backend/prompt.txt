@@ -28,21 +28,18 @@ You are an AI language model tasked with analyzing news articles to determine th
    - Use the numbers in between to indicate varying degrees of left to right political bias.
 
 **Output the Result in JSON Format**:
+DO NOT INCLUDE BACKTICKS AT THE START OR END OF JSON, the json MUST be parseable by a json parser.
 Return the output in the following JSON format:
 
-\`\`\`json
 {
   "reasoning": "Explain your reasoning here.",
   "score": 5,
 }
-\`\`\`
 
 **Example Output**:
 
-\`\`\`json
 {
   "reasoning": "The article frequently uses language that supports progressive policies, emphasizing social justice and climate change. It portrays conservative figures in a negative light, which suggests a left-leaning bias.",
   "score": 4,
 }
-\`\`\`
 `
