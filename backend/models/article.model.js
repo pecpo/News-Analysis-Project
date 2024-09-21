@@ -1,49 +1,56 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const ArticleSchema = mongoose.Schema(
-  {
-    author: {
-      type: String,
-      required: true
-    },
-    title: {
-      type: String,
-      required: true
-    },
-    description: {
-      type: String,
-      required: true
-    },
-    url: {
-      type: String,
-      required: true
-    },
-    urlToImage: {
-      type: String,
-      required: true
-    },
-    publishedAt: {
-      type: Date,
-      required: true
-    },
-    content: {
-      type: String,
-      required: true
-    },
-    continent: {
-      type: String,
-      required: true
-    },
-    politicalLeaning: {
-      type: Number,
-      required: false
-    },
-    sentimentAnalysis: {
-      type: String,
-      required: false
-    }
-  }
-);
+const articleSchema = mongoose.Schema({
+  author: {
+    type: String,
+    required: true,
+  },
+  title: {
+    type: String,
+    required: true,
+  },
+  publishedAt: {
+    type: Date,
+    required: true,
+  },
+  url: {
+    type: String,
+    required: true,
+  },
+  description: {
+    type: String,
+    required: true,
+  },
+  urlToImage: {
+    type: String,
+    required: true,
+  },
+  country: {
+    type: String,
+    required: true,
+  },
+  content: {
+    type: String,
+    required: false,
+  },
+  politicalLeaning: {
+    type: Number,
+    required: false,
+  },
+  sentimentAnalysis: {
+    type: String,
+    required: false,
+  },
+});
 
-const Article = mongoose.model('Article', ArticleSchema);
+articleSchema.set("toJSON", {
+  transform: (document, returnedObject) => {
+    returnedObject.id = returnedObject._id.toString();
+    delete returnedObject._id;
+    delete returnedObject.__v;
+  },
+});
+
+const Article = mongoose.model("Article", articleSchema);
+
 module.exports = Article;

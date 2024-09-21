@@ -1,5 +1,5 @@
+/* eslint-disable react/prop-types */
 // NewsCard.js
-import React from "react";
 import NewsCard from "./NewsCard";
 import SampleImage from "../assets/images/sample.jpg";
 

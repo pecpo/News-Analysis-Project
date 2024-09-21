@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import SampleImage from "../assets/images/sample.jpg";
+// import SampleImage from "../assets/images/sample.jpg";
 import ClipLoader from "react-spinners/ClipLoader";
 import NotFoundPage from "../pages/NotFoundPage";
 
@@ -17,16 +17,16 @@ const Hero = () => {
       try {
         const response = await fetch(`/api/articles`);
         if (!response.ok) {
-          throw new Error('Network response was not ok');
+          throw new Error("Network response was not ok");
         }
         const data = await response.json();
-        console.log('Fetched data:', data); // Log data for debugging
-        const limited= data.slice(0, 2);
-        const limited2= data.slice(2, 6);
+        console.log("Fetched data:", data); // Log data for debugging
+        const limited = data.slice(0, 2);
+        const limited2 = data.slice(2, 6);
         setArticles2(limited2);
         setArticles(limited);
       } catch (error) {
-        console.error('Fetch error:', error); // Log errors to the console
+        console.error("Fetch error:", error); // Log errors to the console
         setError(error.message);
       } finally {
         setLoading(false);
@@ -53,15 +53,18 @@ const Hero = () => {
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 xl:grid-cols-3 gap-8">
           <div className="xl:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-8">
-            {articles
-              .map((article) => (
-                <Link to={`/articles/${article.id}`} key={article.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+            {articles.map((article) => (
+              <Link
+                to={`/articles/${article.id}`}
+                key={article.id}
+                className="bg-white rounded-lg shadow-md overflow-hidden"
+              >
                 <div
                   key={article.id}
                   className="bg-white rounded-lg shadow-md overflow-hidden"
                 >
                   <img
-                    src={SampleImage}
+                    src={article.urlToImage}
                     alt={article.title}
                     className="w-full h-64 object-cover"
                   />
@@ -75,24 +78,23 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
-                </Link>
-              ))}
+              </Link>
+            ))}
           </div>
           <div className="space-y-8">
-            {articles2
-              .map((article) => (
-                <div
-                  key={article.id}
-                  className="bg-white rounded-lg shadow-md p-4"
-                >
-                  <h2 className="text-xl font-semibold">{article.title}</h2>
-                  <div className="mt-2 text-sm text-gray-500">
-                    <span>
-                      {article.publishedAt} &bull; {article.continent}
-                    </span>
-                  </div>
+            {articles2.map((article) => (
+              <div
+                key={article.id}
+                className="bg-white rounded-lg shadow-md p-4"
+              >
+                <h2 className="text-xl font-semibold">{article.title}</h2>
+                <div className="mt-2 text-sm text-gray-500">
+                  <span>
+                    {article.publishedAt} &bull; {article.continent}
+                  </span>
                 </div>
-              ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
