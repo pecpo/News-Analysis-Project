@@ -4,7 +4,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Poppins', 'sans-serif'], // Set 'Poppins' as the default sans font
+        serif: ["Times New Roman", "Times", "serif"],
+        sans: ["Open-Sans", "sans-serif"], // Set 'Poppins' as the default sans font
       },
       fontWeight: {
         normal: 400,
@@ -15,5 +16,4 @@ export default {
     },
   },
   plugins: [],
-}
-
+};

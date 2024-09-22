@@ -2,12 +2,12 @@
 // NewsCardTab.js
 import { useState, useEffect, useRef } from "react";
 import NewsCard from "./NewsCard";
-import SampleImage from "../assets/images/sample.jpg";
+import iso from "iso-3166-1";
 import ClipLoader from "react-spinners/ClipLoader";
 import NotFoundPage from "../pages/NotFoundPage";
 import { FaArrowRight, FaArrowLeft } from "react-icons/fa"; // Import left arrow icon
 
-const NewsCardTab = ({ heading }) => {
+const NewsCardTab = ({ country }) => {
   const [articles, setArticles] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -39,7 +39,7 @@ const NewsCardTab = ({ heading }) => {
     console.log("NewsCardTab component mounted");
     const fetchArticles = async () => {
       try {
-        const response = await fetch(`/api/articles`);
+        const response = await fetch(`/api/articles/country/${country}`);
         if (!response.ok) {
           throw new Error("Network response was not ok");
         }
@@ -57,6 +57,11 @@ const NewsCardTab = ({ heading }) => {
     fetchArticles();
   }, []);
 
+  const getCountryName = (countryCode) => {
+    const country = iso.whereAlpha2(countryCode);
+    return country ? country.country : "Invalid country code";
+  };
+
   if (loading) {
     return (
       <div className="flex justify-center items-center h-screen">
@@ -72,8 +77,8 @@ const NewsCardTab = ({ heading }) => {
   return (
     <section className="py-4 relative">
       <div className="container-xl lg:container m-auto">
-        <h2 className="text-3xl font-bold mb-4 ml-8 border-b-2 border-gray-300 pb-4">
-          {heading}
+        <h2 className="text-3xl font-bold font mb-4 ml-8 border-b-2 border-gray-300 pb-4">
+          {getCountryName(country)}
         </h2>
         <div className="relative">
           <div
@@ -83,9 +88,9 @@ const NewsCardTab = ({ heading }) => {
             {articles.map((article) => (
               <NewsCard
                 key={article.id}
-                image={article.urlToImage || SampleImage}
-                title={article.title || "No Title Available"}
-                description={article.description || "No Description Available"}
+                image={article.urlToImage}
+                title={article.title}
+                description={article.description}
                 link={`/articles/${article.id}`}
               />
             ))}
