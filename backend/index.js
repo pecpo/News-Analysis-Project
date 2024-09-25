@@ -8,6 +8,8 @@ const {
   fetchArticleContent,
 } = require("./services/newsService.js");
 
+const { performSentimentAnalysis } = require("./services/geminiService.js");
+
 const app = require("./app");
 
 mongoose
@@ -27,7 +29,7 @@ mongoose
     //   console.log(article);
     // });
 
-    assignAllArticleContent();
+    // assignAllArticleContent();
 
     //DO NOT THE ARTICLES GET!!!!!
     // await fetchAndStoreNews();
@@ -37,6 +39,8 @@ mongoose
     //DO NOT THE ARTICLES DELET!!!!!
 
     // dropAllArticles();
+
+    performSentimentAnalysis();
 
     const PORT = process.env.PORT || 5000;
     app.listen(PORT, () => {

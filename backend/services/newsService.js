@@ -75,30 +75,36 @@ function fetchArticleContent(url) {
     })
     .catch((error) => {
       console.error("Error fetching article content:", error);
-      return "NUH"; // Return fallback text in case of an error
+      return "No Content Available"; // Return fallback text in case of an error
     });
 }
 
-function assignAllArticleContent() {
-  return Article.find({})
-    .then((articles) => {
-      return articles.reduce((promiseChain, article) => {
-        return promiseChain
-          .then(() => fetchArticleContent(article.url))
-          .then((content) => {
-            if (content && content !== "NUH") {
-              article.content = content;
-              return article.save().then(() => {
-                console.log(`Saved content for article: ${article.title}`);
-              });
-            }
-          })
-          .then(() => delay(14000)); // 14 seconds delay to stay within rate limit
-      }, Promise.resolve()); // Initial empty resolved promise to start the chain
-    })
-    .catch((error) => {
-      console.error("Error assigning article content:", error);
-    });
+async function assignAllArticleContent() {
+  try {
+    const articles = await Article.find({});
+    for (const article of articles) {
+      if (!article.content || article.content === "No Content Available") {
+        try {
+          const content = await fetchArticleContent(article.url);
+          if (content && content !== "No Content Available") {
+            article.content = content;
+            await article.save();
+            console.log(`Saved content for article: ${article.title}`);
+          }
+        } catch (error) {
+          console.error(
+            `Error fetching or saving content for article: ${article.title}`,
+            error
+          );
+        }
+        await delay(14000); // 14 seconds delay to stay within rate limit
+      } else {
+        console.log(`Content already exists for article: ${article.title}`);
+      }
+    }
+  } catch (error) {
+    console.error("Error assigning article content:", error);
+  }
 }
 
 function dropAllArticles() {

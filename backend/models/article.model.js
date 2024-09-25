@@ -33,11 +33,11 @@ const articleSchema = mongoose.Schema({
     type: String,
     required: false,
   },
-  politicalLeaning: {
+  leaning: {
     type: Number,
     required: false,
   },
-  sentimentAnalysis: {
+  reasoning: {
     type: String,
     required: false,
   },

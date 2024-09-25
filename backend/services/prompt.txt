@@ -25,6 +25,7 @@ You are an AI language model tasked with analyzing news articles to determine th
      - **1**: Far Left
      - **5**: Centrist
      - **10**: Far Right
+     - **-1** IF THE CONTENT OF THE ARTICLE SEEMS BE FILLED WITH GARBAGE VALUES OR WORDS OR IN GENERAL DOESNT MAKE SENSE AT ALL, OR IF THE LANGUAGE OF THE CONTENT IS NOT ENGLISH
    - Use the numbers in between to indicate varying degrees of left to right political bias.
 
 **Output the Result in JSON Format**:
