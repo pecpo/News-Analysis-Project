@@ -3,6 +3,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import RatingBar from "./Ratingbar";
 
 const NewsCard = ({
   image,
@@ -12,6 +13,8 @@ const NewsCard = ({
   linkText = "Read More",
   bgColor = "bg-black",
   hoverBgColor = "hover:bg-gray-700",
+  reasoning,
+  leaning,
 }) => {
   // Truncate description to 100 characters
   const truncateDescription = (text, maxLength) => {
@@ -34,6 +37,7 @@ const NewsCard = ({
           {linkText}
         </Link>
       </div>
+      <RatingBar rating={leaning} tooltipText={reasoning} />
     </div>
   );
 };

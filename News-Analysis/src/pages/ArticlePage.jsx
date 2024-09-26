@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import ClipLoader from "react-spinners/ClipLoader";
 import NotFoundPage from "./NotFoundPage";
+import RatingBar from "../components/Ratingbar";
 
 const ArticlePage = () => {
   const { id } = useParams();
@@ -52,6 +53,10 @@ const ArticlePage = () => {
               <p>{new Date(article.publishedAt).toDateString()}</p>
               <p>{article.author}</p>
               <p>Business reporter</p>
+              <RatingBar
+                rating={article.leaning}
+                tooltipText={article.reasoning}
+              />
             </div>
           </header>
 

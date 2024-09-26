@@ -92,6 +92,8 @@ const NewsCardTab = ({ country }) => {
                 title={article.title}
                 description={article.description}
                 link={`/articles/${article.id}`}
+                leaning={article.leaning}
+                reasoning={article.reasoning}
               />
             ))}
           </div>

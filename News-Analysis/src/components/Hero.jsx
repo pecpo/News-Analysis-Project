@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 // import SampleImage from "../assets/images/sample.jpg";
 import ClipLoader from "react-spinners/ClipLoader";
 import NotFoundPage from "../pages/NotFoundPage";
+import RatingBar from "./Ratingbar";
 
 const Hero = () => {
   const { continent } = useParams();
@@ -78,6 +79,10 @@ const Hero = () => {
                     </div>
                   </div>
                 </div>
+                <RatingBar
+                  rating={article.leaning}
+                  tooltipText={article.reasoning}
+                />
               </Link>
             ))}
           </div>
@@ -93,6 +98,10 @@ const Hero = () => {
                     {article.publishedAt} &bull; {article.continent}
                   </span>
                 </div>
+                <RatingBar
+                  rating={article.leaning}
+                  tooltipText={article.reasoning}
+                />
               </div>
             ))}
           </div>
